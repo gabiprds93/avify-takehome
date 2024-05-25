@@ -14,3 +14,7 @@ node_modules/
 
 .idea/
 *.iml
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
