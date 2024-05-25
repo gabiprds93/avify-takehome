@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from "react"
+import { fetchGenerationMix } from "./lib/data"
 
-const App = () => <h1>UK Energy Mix</h1>;
+const App = () => {
+  const [generationMix, setGenerationMix] = useState(null)
 
-export {
-    App
+  useEffect(() => {
+    ;(async () => {
+      const data = await fetchGenerationMix()
+      setGenerationMix(data.generationmix)
+    })()
+  }, [])
+
+  return (
+    <main>
+      <h1>UK Energy Mix</h1>
+
+      <section>
+        <ul>
+          {generationMix?.map((item) => {
+            return <li>{item.fuel}</li>
+          })}
+        </ul>
+      </section>
+    </main>
+  )
 }
+
+export { App }
