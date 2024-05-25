@@ -1,0 +1,30 @@
+.item {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+}
+
+.fuel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.image {
+  height: 64px;
+  width: 64px;
+}
+
+.bar-container {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.bar {
+  background-color: yellowgreen;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 16px;
+}

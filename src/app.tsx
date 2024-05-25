@@ -1,29 +1,12 @@
-import React, { useState, useEffect } from "react"
-import { fetchGenerationMix } from "./lib/data"
+import React from "react"
+import GenerationList from "./components/GenerationList"
 
-const App = () => {
-  const [generationMix, setGenerationMix] = useState(null)
-
-  useEffect(() => {
-    ;(async () => {
-      const data = await fetchGenerationMix()
-      setGenerationMix(data.generationmix)
-    })()
-  }, [])
-
+export default function App() {
   return (
     <main>
       <h1>UK Energy Mix</h1>
 
-      <section>
-        <ul>
-          {generationMix?.map((item) => {
-            return <li>{item.fuel}</li>
-          })}
-        </ul>
-      </section>
+      <GenerationList />
     </main>
   )
 }
-
-export { App }
